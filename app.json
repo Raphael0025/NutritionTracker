@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "92ec93d3-4845-4272-8ee9-b0c45045ea44"
+      }
+    },
+    "owner": "raphael0025"
   }
 }
