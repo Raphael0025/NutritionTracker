@@ -7,19 +7,31 @@ const Dashboard = ({navigation}) =>{
         <SafeAreaView style={[styles.box, {backgroundColor: '#fff'}]}>
             <StatusBar style={{backgroundColor: '#fff'}}/>
             <ImageBackground style={styles.img} source={require('../assets/img_bg.png')} />
-            <View style={[styles.title, styles.dsg]}>
-                <Text style={styles.titleStyle}>Sign in</Text>
+            <View style={styles.header}>
+                <Text>Hello David!</Text>
+                <Text>Track, Add, and Eat Healthy Food.</Text>
             </View>
-            <View style={[styles.btnCon, styles.dsg]}>
-                <TouchableOpacity opacity={1.2} style={styles.btn}>
-                    <Text style={styles.btnStyle} onPress={() => navigation.replace('SignIn')}>Login</Text>
-                </TouchableOpacity>
+            <View style={styles.body}>
+
             </View>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
+    body:{
+        flex:1,
+        width: '100%',
+        height: '70%',
+        backgroundColor: 'red'
+    },
+    header:{
+        flex:1,
+        width: '100%',
+        height: '30%',
+        position: 'absolute',
+        backgroundColor: 'cyan'
+    },
     box: {
         flex: 1,
     },
