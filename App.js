@@ -20,21 +20,15 @@ function DashScreen(){
                       screenOptions={{headerShown: false,showLabel: false, 
                       tabBarStyle:{
                           position: 'absolute',
-                          bottom: 0,
                           left: 0, 
                           right: 0,
                           height: 70,
                           borderTopLeftRadius: 20,
                           borderTopRightRadius: 20,
-                          backgroundColor: '#fff',
-                          shadowOffset: {
-                              width: 1,
-                              height: 1,
-                          },
-                          shadowOpacity: 0.8,
-                          shadowColor: '#000',
-                          shadowRadius: 2,
-                          elevation: 4,
+                          backgroundColor: '#F2FFF1',
+                          elevation: 5,
+                          borderColor: '#292D32ff',
+                          borderWidth: 1,
                       }
     }} >
         <TabNav.Screen name='Dashboard' component={Dashboard} options={{title: 'Dashboard'}}/>

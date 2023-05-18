@@ -1,19 +1,18 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, SafeAreaView, Dimensions, TouchableOpacity, FlatList, Text, Image, View, TextInput} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import {Widget} from '../component/WidgetComp';
 
 const Dashboard = ({navigation}) =>{
     return (
         <SafeAreaView style={[styles.box, {backgroundColor: '#fff'}]}>
             <StatusBar style={{backgroundColor: '#fff'}}/>
-            <ImageBackground style={styles.img} source={require('../assets/img_bg.png')} />
             <View style={styles.header}>
                 <Text>Hello David!</Text>
                 <Text>Track, Add, and Eat Healthy Food.</Text>
             </View>
             <View style={styles.body}>
-                <Widget />
+                <Text>Nutrition Tracker</Text>
+                <Image source={require('../assets/trackergraph.png')}/>
             </View>
         </SafeAreaView>
     );
@@ -23,7 +22,10 @@ const styles = StyleSheet.create({
     body:{
         width: '100%',
         height: '70%',
-        backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F2FFF1',
+        gap: 30,
     },
     header:{
         flex: 1,
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         height: '30%',
-        backgroundColor: 'cyan'
+        backgroundColor: '#F2FFF1'
     },
     box: {
         flex: 1,
