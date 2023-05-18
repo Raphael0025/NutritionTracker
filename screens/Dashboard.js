@@ -1,6 +1,7 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, SafeAreaView, Dimensions, TouchableOpacity, FlatList, Text, Image, View, TextInput} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import {Widget} from '../component/WidgetComp';
 
 const Dashboard = ({navigation}) =>{
     return (
@@ -12,7 +13,7 @@ const Dashboard = ({navigation}) =>{
                 <Text>Track, Add, and Eat Healthy Food.</Text>
             </View>
             <View style={styles.body}>
-
+                <Widget />
             </View>
         </SafeAreaView>
     );
@@ -20,23 +21,23 @@ const Dashboard = ({navigation}) =>{
 
 const styles = StyleSheet.create({
     body:{
-        flex:1,
         width: '100%',
         height: '70%',
-        backgroundColor: 'red'
+        backgroundColor: 'red',
     },
     header:{
-        flex:1,
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
         width: '100%',
         height: '30%',
-        position: 'absolute',
         backgroundColor: 'cyan'
     },
     box: {
         flex: 1,
+        margin: 0,
     },
     img:{
-        flex:1, 
         opacity: 0.1, 
         transform: [{ rotate: '-0deg' }]
     },

@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         bottom: 500, 
     },
     btnCon:{
-        top: 600, 
+        top: 700, 
         bottom: 50, 
     },
     titleStyle:{

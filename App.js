@@ -28,13 +28,13 @@ function DashScreen(){
                           borderTopRightRadius: 20,
                           backgroundColor: '#fff',
                           shadowOffset: {
-                              width: 0,
+                              width: 1,
                               height: 1,
                           },
-                          shadowOpacity: 1,
+                          shadowOpacity: 0.8,
                           shadowColor: '#000',
-                          shadowRadius: 10,
-                          elevation: 24,
+                          shadowRadius: 2,
+                          elevation: 4,
                       }
     }} >
         <TabNav.Screen name='Dashboard' component={Dashboard} options={{title: 'Dashboard'}}/>
