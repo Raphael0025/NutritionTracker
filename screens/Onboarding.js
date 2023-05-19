@@ -12,7 +12,7 @@ const OnBoarding = ({navigation}) => {
                 <Text style={styles.titleStyle}>Nutrition Tracking System</Text>
             </View>
             <View style={[styles.btnCon, styles.dsg]}>
-                <TouchableOpacity opacity={1.2} style={styles.btn}>
+                <TouchableOpacity activeOpacity={0.9} style={styles.btn}>
                     <Text style={styles.btnStyle} onPress={() => navigation.replace('SignIn')}>Get Started</Text>
                 </TouchableOpacity>
             </View>

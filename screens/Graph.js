@@ -4,7 +4,7 @@ import { StyleSheet, SafeAreaView, Text, Image, View} from 'react-native';
 const Profile = () => { 
     return (
         <SafeAreaView style={styles.box}>
-            <Image style={styles.img} source={require('../assets/profile.png')} />
+            <Image style={styles.img} source={require('../assets/graph.png')} />
         </SafeAreaView>
     );
 }

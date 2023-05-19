@@ -42,7 +42,7 @@ const SignIn = ({navigation}) => {
                     />
             </View>
             <View style={[styles.btnCon, styles.dsg]}>
-                <TouchableOpacity opacity={1.2} style={styles.btn}>
+                <TouchableOpacity activeOpacity={0.8} style={styles.btn}>
                     <Text style={styles.btnStyle} onPress={() => navigation.navigate('DashScreen')}>Login</Text>
                 </TouchableOpacity>
             </View>

@@ -1,105 +1,97 @@
-import React from 'react';
-import {ImageBackground, StyleSheet, SafeAreaView, Dimensions, TouchableOpacity, FlatList, Text, Image, View, TextInput} from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import * as React from 'react';
+import {ScrollView, StyleSheet, SafeAreaView, TouchableOpacity, Text, View, FlatList, TextInput, Dimensions} from 'react-native';
 
-const InsertNutrition = () => { 
+const placeHolders = [
+        {name: 'Food'},
+        {name: 'Grams'},
+        {name: 'Vitamin A'},
+        {name: 'Vitamin B6'},
+        {name: 'Vitamin B12'},
+        {name: 'Vitamin D'},
+        {name: 'Vitamin E'},
+        {name: 'Iron'},
+        {name: 'Zinc'},
+        {name: 'Protein'},
+        {name: 'Iodine'},
+        {name: 'Calcium'},
+        {name: 'Magnesium'},
+        {name: 'Phosphorus'},
+    ];
+
+const InsertNutrition = () => {
 
     return (
-        <SafeAreaView style={[styles.box, {backgroundColor: '#fff'}]}>
-            <StatusBar style={{backgroundColor: '#fff'}}/>
-            <ImageBackground style={styles.img} source={require('../assets/img_bg.png')} />
-            <View style={[styles.title, styles.dsg]}>
-                <Text style={styles.titleStyle}>Sign in</Text>
+        <SafeAreaView style={styles.box}>
+            <View style={styles.btnGrp}>
+                <TouchableOpacity activeOpacity={0.6} style={[styles.insrt, styles.btn]}><Text style={styles.btnTxt}>Insert and save item</Text></TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.6} style={[styles.edt, styles.btn]}><Text style={styles.btnTxt}>Edit and save item</Text></TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.6} style={[styles.sve, styles.btn]}><Text style={styles.btnTxt}>Save item</Text></TouchableOpacity>
             </View>
-            <View style={[styles.dsg, styles.input]}>
-                <TextInput style={[{ 
-                        width: 320,
-                        height: 50, 
-                        backgroundColor: '#fff',
-                        paddingLeft: 20,
-                        borderColor: "#98CD93",
-                        borderWidth: 1,
-                        borderRadius: 15,
-                        elevation: 5,
-                        fontSize: 16,
-                        marginBottom: 20,
-                    }]}
-                    placeholder="Enter your Username"    
-                    />
-                    <TextInput style={[{ 
-                        width: 320,
-                        height: 50, 
-                        backgroundColor: '#fff',
-                        paddingLeft: 20,
-                        borderColor: "#98CD93",
-                        borderWidth: 1,
-                        borderRadius: 15,
-                        elevation: 5,
-                        fontSize: 16,
-                        marginBottom: 20,
-                    }]}
-                    placeholder="Enter Password"    
-                    />
-            </View>
-            <View style={[styles.btnCon, styles.dsg]}>
-                <TouchableOpacity opacity={1.2} style={styles.btn}>
-                    <Text style={styles.btnStyle} >Login</Text>
-                </TouchableOpacity>
+            <FlatList 
+                removeClippedSubviews={false}
+                contentContainerStyle={{
+                marginTop: 15,
+                marginRight: 25,
+                marginLeft: 25,
+                justifyContent: 'center',
+                alignItems: 'stretch',
+                paddingBottom: 15,
+                gap: 15,}}
+                data={placeHolders}
+                renderItem={({item}) => 
+                    <TextInput placeholder={item.name} style={styles.input}/> 
+                }
+            />
+            <View style={{gap: 20, margin: 0, bottom: 60, padding: 30,  elevation: 4,}}>
+                <TouchableOpacity activeOpacity={0.6} style={[ styles.btn]}><Text style={styles.btnTxt}>Add items to toal nutrients</Text></TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.6} style={[ styles.btn]}><Text style={styles.btnTxt}>Subtract amount</Text></TouchableOpacity>
             </View>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
+    input:{
+        height: 50,
+        borderWidth: 2,
+        borderColor: '#98CD93',
+        fontSize: 16,
+        paddingLeft: 20,
+        borderRadius: 10,
+    },
     box: {
         flex: 1,
+        gap: 80,
+        backgroundColor: '#F2FFF1'
     },
-    img:{
-        flex:1, 
-        opacity: 0.1, 
-        transform: [{ rotate: '-0deg' }]
+    btnGrp:{
+        flex: 1,
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        columnGap: 110,
+        gap: 10,
+        padding: 20,
     },
-    dsg:{
-        position: 'absolute', 
-        justifyContent: 'center', 
-        alignItems: 'center',
-        left: 0, 
-        right: 0, 
-        
-    },
-    input:{
-        top: 400,
-        bottom: 400,
-    },
-    title:{
-        top: 220, 
-        bottom: 500, 
-    },
-    btnCon:{
-        top: 600, 
-        bottom: 50, 
-    },
-    titleStyle:{
-        color: "#455F41", 
-        width: 320, 
-        textAlign: 'left', 
-        fontSize: 50, 
-        fontWeight: 700
+    btnTxt:{
+        color: '#F1FEF0',
+        fontSize: 13,
+        fontWeight: 500
     },
     btn: {
-        borderRadius: 15, 
-        backgroundColor: "#455F41", 
-        width: 280, 
-        height: 60, 
-        justifyContent: 'center', 
-        alignItems: 'center'
+        backgroundColor: '#455F41',
+        borderRadius: 5,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    btnStyle:{
-        width: 320, 
-        textAlign: 'center',
-        fontSize: 20, 
-        color: '#fff', 
-        fontWeight: 600
-    }
+    insrt:{
+        width: 150,
+    }, 
+    edt:{
+        width: 150,
+    }, 
+    sve:{
+        width: 90,
+    },
 });
 export default InsertNutrition;
