@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native'
+import { Box } from 'native-base'
 import React from 'react'
 
 const App = () => {
   return (
-    <View>
+    <Box>
       <Text>App</Text>
-    </View>
+    </Box>
   )
 }
 
